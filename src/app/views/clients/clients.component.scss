@@ -1,0 +1,24 @@
+.container {
+  padding: 1rem;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+table {
+  width: 100%;
+  padding: 1rem;
+}
+
+table th {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+tr.item-row:hover {
+  background: #ebeef1;
+  cursor: pointer;
+}
