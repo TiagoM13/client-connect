@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client, Status } from '../clients/clients.model';
-import { clients } from 'src/app/data/clients';
+import { Categorie, Client, Email, Status } from 'src/app/services/client.model';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-client',
@@ -9,16 +9,37 @@ import { clients } from 'src/app/data/clients';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-  client: Client | undefined = undefined;
+  client: Client;
+  emails: Email[];
+  categories: Categorie[];
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.client = clients[+params.get('id')]
+    const id = this.route.snapshot.paramMap.get('id');
+    this.clientService.getClient(id).subscribe(client => {
+      this.client = client;
     })
+    this.clientService.getEmails().subscribe(emails => {
+      this.emails = emails;
+    });
+    this.clientService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
+  getEmails(client: Client): Email[] {
+    return client.emails.map(emailId => this.emails.find(email => email.id === emailId));
+  }
+
+  getCategoryName(categoryId: number): string {
+    const category = this.categories.find(cat => cat.id === categoryId);
+    return category ? category.nome : 'Categoria não encontrada';
+  }
 
   getStatusText(status: Status): string {
     switch (status) {
@@ -31,6 +52,13 @@ export class ClientComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  deleteClient(): void {
+    this.clientService.deleteClient(this.client.id).subscribe(() => {
+      this.clientService.showMessage('Cliente deletado com sucesso!')
+      this.router.navigate(['/clients'])
+    })
   }
 
   onCancel(): void {

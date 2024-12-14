@@ -10,6 +10,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.v-middle {
+  vertical-align: middle;
+}
+
 .container {
   padding: 1rem;
 }
@@ -18,4 +22,14 @@ body {
   font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 400;
+}
+
+.msg-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.msg-error {
+  background-color: #e35e6b;
+  color: #fff;
 }
