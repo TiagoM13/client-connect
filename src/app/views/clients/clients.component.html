@@ -1,6 +1,8 @@
-<h2>Lista de Clientes</h2>
+<mat-card class="mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>Lista de Clientes</mat-card-title>
+  </mat-card-header>
 
-<div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataClients">
     <ng-container matColumnDef="inscricao">
       <th mat-header-cell *matHeaderCellDef> Inscrição </th>
@@ -28,4 +30,4 @@
   </table>
 
   <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]" showFirstLastButtons></mat-paginator>
-</div>
+</mat-card>
