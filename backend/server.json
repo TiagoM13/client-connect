@@ -1,0 +1,105 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "inscricao": "12.345.678/0001-90",
+      "nome": "Ana Silva",
+      "apelido": "Ana",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/1.jpg",
+      "status": 0,
+      "emails": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "inscricao": "45.678.901/0004-60",
+      "nome": "João Almeida",
+      "apelido": "João",
+      "avatarUrl": "https://randomuser.me/api/portraits/men/4.jpg",
+      "status": 0,
+      "emails": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "id": "5",
+      "inscricao": "56.789.012/0005-50",
+      "nome": "Luciana Oliveira",
+      "apelido": "Luci",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/5.jpg",
+      "status": 1,
+      "emails": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "7",
+      "inscricao": "56.789.012/0005-50",
+      "nome": "Luciana Oliveira 2",
+      "apelido": "Luci 2",
+      "avatarUrl": "https://randomuser.me/api/portraits/women/5.jpg",
+      "status": 1,
+      "emails": [
+        2,
+        4
+      ]
+    }
+  ],
+  "emails": [
+    {
+      "id": 1,
+      "categoria": 1,
+      "nome": "Jose de Assis",
+      "email": "jose.assis@gmail.com",
+      "clientId": "1"
+    },
+    {
+      "id": 2,
+      "categoria": 2,
+      "nome": "Aline Santos",
+      "email": "aline.santos@gmail.com",
+      "clientId": "1"
+    },
+    {
+      "id": 3,
+      "categoria": 3,
+      "nome": "Pedro Lima",
+      "email": "pedro.lima@empresa.com",
+      "clientId": null
+    },
+    {
+      "id": 4,
+      "categoria": 4,
+      "nome": "Rita Souza",
+      "email": "rita.souza@finance.com",
+      "clientId": null
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nome": "Advogado"
+    },
+    {
+      "id": 2,
+      "nome": "CEO"
+    },
+    {
+      "id": 3,
+      "nome": "Empresário"
+    },
+    {
+      "id": 4,
+      "nome": "Contador"
+    },
+    {
+      "id": 5,
+      "nome": "Consultor de Negócios"
+    }
+  ]
+}
