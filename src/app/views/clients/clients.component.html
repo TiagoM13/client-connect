@@ -5,29 +5,28 @@
     <table mat-table [dataSource]="dataClients">
       <ng-container matColumnDef="inscricao">
         <th mat-header-cell *matHeaderCellDef> Inscrição </th>
-        <td mat-cell *matCellDef="let client">{{client.inscricao}}</td>
+        <td mat-cell *matCellDef="let client">{{ client.inscricao }}</td>
       </ng-container>
 
       <ng-container matColumnDef="apelido">
         <th mat-header-cell *matHeaderCellDef> Apelido </th>
-        <td mat-cell *matCellDef="let client">{{client.apelido}}</td>
+        <td mat-cell *matCellDef="let client">{{ client.apelido }}</td>
       </ng-container>
 
       <ng-container matColumnDef="nome">
         <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let client">{{client.nome}}</td>
+        <td mat-cell *matCellDef="let client">{{ client.nome }}</td>
       </ng-container>
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let client">{{client.status}}</td>
+        <td mat-cell *matCellDef="let client">{{ getStatusText(client.status) }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let client; columns: displayedColumns;" class="item-row"></tr>
     </table>
 
-    <!-- <mat-paginator #paginator [length]="dataClients.length" [pageSize]="10" [pageSizeOptions]
-      showFirstLastButtons="[5, 10, 25, 100]"></mat-paginator> -->
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]" showFirstLastButtons></mat-paginator>
   </div>
 </div>
