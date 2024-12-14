@@ -7,16 +7,19 @@ import { MatToolbarModule } from "@angular/material/toolbar"
 import { MatTableModule } from "@angular/material/table"
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
-import { ClientComponent } from './views/clients/clients.component';
+import { ClientsComponent } from './views/clients/clients.component';
+import { ClientComponent } from './views/client/client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    ClientsComponent,
     ClientComponent,
   ],
   imports: [
@@ -27,7 +30,8 @@ import { ClientComponent } from './views/clients/clients.component';
     MatToolbarModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,19 +3,20 @@ import { clients } from 'src/app/data/clients';
 import { Client, Status } from './clients.model';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-client',
+  selector: 'app-clients',
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss']
 })
-export class ClientComponent implements OnInit {
+export class ClientsComponent implements OnInit {
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
+
   displayedColumns: string[] = ["inscricao", "apelido", "nome", "status"]
   dataClients = new MatTableDataSource<Client>(clients)
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.dataClients.paginator = this.paginator
@@ -32,5 +33,9 @@ export class ClientComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  onNavigate(client: Client): void {
+    this.router.navigate([`/clients/${client.id}`])
   }
 }
