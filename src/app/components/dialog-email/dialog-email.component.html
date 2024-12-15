@@ -1,0 +1,23 @@
+<h2>{{ title }}</h2>
+<div mat-dialog-content class="content-dialog">
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome" [(ngModel)]="data.nome" name="nome" required [disabled]="isDisabled" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" [(ngModel)]="data.email" name="email" required [disabled]="isDisabled" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <mat-select [(ngModel)]="data.categoria" name="categoria" required [disabled]="isDisabled">
+      <mat-option *ngFor="let categoria of categories" [value]="categoria.value">
+        {{ categoria.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="close()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" cdkFocusInitial>Confirmar</button>
+</div>

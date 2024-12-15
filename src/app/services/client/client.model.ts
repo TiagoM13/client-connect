@@ -5,7 +5,7 @@ export enum Status {
 }
 
 export interface Client {
-  id: string;
+  id?: string;
   inscricao: string;
   nome: string;
   apelido: string;
@@ -14,15 +14,7 @@ export interface Client {
   emails?: any[];
 }
 
-export interface Email {
-  id: number;
-  categoria: number
-  nome: string;
-  email: string;
-  clientId: string;
-}
-
 export interface Categorie {
-  id: number;
+  id: string;
   nome: string;
 }

@@ -14,12 +14,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+
+import { HeaderComponent } from './components/header/header.component';
+import { DialogEmailComponent } from './components/dialog-email/dialog-email.component';
+
+import { ClientsComponent } from './views/clients/clients.component';
+import { ClientComponent } from './views/client/client.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ClientsComponent } from './views/clients/clients.component';
-import { ClientComponent } from './views/client/client.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,7 @@ import { ClientComponent } from './views/client/client.component';
     HeaderComponent,
     ClientsComponent,
     ClientComponent,
+    DialogEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,12 @@ import { ClientComponent } from './views/client/client.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatListModule
+  ],
+  entryComponents: [
+    DialogEmailComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

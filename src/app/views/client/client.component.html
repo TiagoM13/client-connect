@@ -39,20 +39,26 @@
 
       <div class="email-list">
         <span>Emails: </span>
-        <ul>
-          <li *ngFor="let email of getEmails(client)">
+        <mat-list role="list">
+          <mat-list-item *ngFor="let email of getEmails(client)">
             {{ getCategoryName(email.categoria) }} - {{ email.nome }} - {{ email.email }}
 
-            <button mat-icon-button (click)="getEmail(email)">
+            <button mat-icon-button color="primary" (click)="openDialog('update', email)">
               <i class="material-icons icon">edit</i>
             </button>
-          </li>
-        </ul>
+            <button mat-icon-button color="warn" (click)="openDialog('delete', email)">
+              <i class="material-icons icon">delete</i>
+            </button>
+            <mat-divider [inset]="true"></mat-divider>
+          </mat-list-item>
+        </mat-list>
+        <button mat-stroked-button color="primary" class="add-email" (click)="openDialog('create')">adicionar
+          email</button>
       </div>
     </div>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="updateClient()">Salvar</button>
+      <button mat-raised-button color="primary" (click)="saveClient()">Salvar</button>
       <button mat-raised-button color="warn" (click)="deleteClient()">Excluir</button>
     </mat-card-actions>
   </mat-card-content>

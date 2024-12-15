@@ -14,7 +14,7 @@
 
 .card-content {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .card-content form {
@@ -45,10 +45,17 @@
   border-radius: 99999px;
 }
 
-.email-list ul {
-  margin: 0
+.email-list .mat-list .mat-list-item {
+  font-size: 0.875rem;
 }
 
-.email-list ul li .icon {
+.email-list .mat-list .mat-list-item .icon {
   font-size: 0.875rem;
+}
+
+.add-email {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
 }
