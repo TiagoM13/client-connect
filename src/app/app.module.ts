@@ -17,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/template/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ClientsComponent } from './views/clients/clients.component';
 import { ClientComponent } from './views/client/client.component';
 
