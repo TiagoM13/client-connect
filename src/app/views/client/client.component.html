@@ -17,19 +17,19 @@
       <form>
         <mat-form-field>
           <mat-label>Inscrição</mat-label>
-          <input matInput placeholder="Inscrição" [(ngModel)]="client.inscricao" name="inscricao">
+          <input matInput placeholder="Inscrição" [(ngModel)]="client.inscricao" name="inscricao" required>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Apelido</mat-label>
-          <input matInput placeholder="Apelido" [(ngModel)]="client.apelido" name="apelido">
+          <input matInput placeholder="Apelido" [(ngModel)]="client.apelido" name="apelido" required>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Nome" [(ngModel)]="client.nome" name="nome">
+          <input matInput placeholder="Nome" [(ngModel)]="client.nome" name="nome" required>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Status</mat-label>
-          <mat-select [(ngModel)]="client.status" name="status">
+          <mat-select [(ngModel)]="client.status" name="status" required>
             <mat-option *ngFor="let status of statusOtions" [value]="status.value">
               {{ status.viewValue }}
             </mat-option>
@@ -37,18 +37,22 @@
         </mat-form-field>
       </form>
 
-      <div>
-        <strong>Emails: </strong>
+      <div class="email-list">
+        <span>Emails: </span>
         <ul>
           <li *ngFor="let email of getEmails(client)">
             {{ getCategoryName(email.categoria) }} - {{ email.nome }} - {{ email.email }}
+
+            <button mat-icon-button (click)="getEmail(email)">
+              <i class="material-icons icon">edit</i>
+            </button>
           </li>
         </ul>
       </div>
     </div>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary">Salvar</button>
+      <button mat-raised-button color="primary" (click)="updateClient()">Salvar</button>
       <button mat-raised-button color="warn" (click)="deleteClient()">Excluir</button>
     </mat-card-actions>
   </mat-card-content>

@@ -52,14 +52,14 @@ export class ClientService {
   }
 
   createClient(dto: Client): Observable<Client> {
-    return this.http.post<Client>(this.baseUrl, dto,).pipe(
+    return this.http.post<Client>(this.baseUrl, dto).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
-  updateClient(id: string, dto: Client): Observable<Client> {
-    return this.http.put<Client>(`${this.baseUrl}/${id}`, dto,).pipe(
+  updateClient(dto: Client): Observable<Client> {
+    return this.http.put<Client>(`${this.baseUrl}/${dto.id}`, dto).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )

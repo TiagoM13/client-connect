@@ -60,6 +60,17 @@ export class ClientComponent implements OnInit {
     })
   }
 
+  updateClient(): void {
+    this.clientService.updateClient(this.client).subscribe(() => {
+      this.clientService.showMessage('Cliente atualizado com sucesso!')
+      this.router.navigate(['/clients'])
+    })
+  }
+
+  getEmail(email: Email): void {
+    console.log(email)
+  }
+
   onCancel(): void {
     this.router.navigate(["/clients"])
   }
