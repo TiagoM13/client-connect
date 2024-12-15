@@ -5,9 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogEmailComponent } from '@app/components/dialog-email/dialog-email.component';
 import { ActionType } from '@app/components/dialog-email/dialog-email.model';
 import { Email } from '@app/services/email/email.model';
-import { Categorie, Client } from '@app/services/client/client.model';
+import { Client } from '@app/services/client/client.model';
+import { Category } from '@app/services/category/category.model';
 import { ClientService } from '@app/services/client/client.service';
 import { EmailService } from '@app/services/email/email.service';
+import { CategoryService } from '@app/services/category/category.service';
 
 interface Option {
   value: number;
@@ -22,7 +24,7 @@ interface Option {
 export class ClientComponent implements OnInit {
   client: Client;
   emails: Email[];
-  categories: Categorie[];
+  categories: Category[];
 
   isDeleteEmail: boolean = false;
 
@@ -36,6 +38,7 @@ export class ClientComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
+    private categoryService: CategoryService,
     private emailService: EmailService,
     private router: Router,
     private route: ActivatedRoute,
@@ -51,10 +54,10 @@ export class ClientComponent implements OnInit {
     this.clientService.getClient(id).subscribe(client => {
       this.client = client;
     })
-    this.clientService.getEmails().subscribe(emails => {
+    this.emailService.getAllEmails().subscribe(emails => {
       this.emails = emails;
     });
-    this.clientService.getCategories().subscribe(categories => {
+    this.categoryService.getAllCategories().subscribe(categories => {
       this.categories = categories;
     });
   }
@@ -111,13 +114,23 @@ export class ClientComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (!result) return;
-
       const { action, data } = result;
+
+      if (action === 'create' && (!data || !this.isValidEmail(data))) {
+        return;
+      };
+
       if (action === 'create') this.addEmail(data);
       if (action === 'update') this.updateEmail(data);
       if (action === 'delete') this.removeEmail(data);
     });
+  }
+
+  isValidEmail(data: Email): boolean {
+    if (!data.email || data.email.trim() === '') return false;
+    if (!data.nome || data.nome.trim() === '') return false;
+    if (!data.categoria || data.categoria === null) return false
+    return true;
   }
 
   addEmail(newEmail: Email): void {

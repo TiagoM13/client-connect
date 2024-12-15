@@ -11,8 +11,8 @@
   <mat-form-field>
     <mat-label>Categoria</mat-label>
     <mat-select [(ngModel)]="data.categoria" name="categoria" required [disabled]="isDisabled">
-      <mat-option *ngFor="let categoria of categories" [value]="categoria.value">
-        {{ categoria.viewValue }}
+      <mat-option *ngFor="let category of categories" [value]="category.value">
+        {{ category.viewValue }}
       </mat-option>
     </mat-select>
   </mat-form-field>

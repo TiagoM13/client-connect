@@ -13,8 +13,3 @@ export interface Client {
   status: Status;
   emails?: any[];
 }
-
-export interface Categorie {
-  id: string;
-  nome: string;
-}

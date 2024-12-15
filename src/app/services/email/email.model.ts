@@ -3,5 +3,4 @@ export interface Email {
   categoria: string
   nome: string;
   email: string;
-  clientId?: string;
 }

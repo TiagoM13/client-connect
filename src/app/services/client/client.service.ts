@@ -5,8 +5,7 @@ import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators"
 
 import { environment } from '@env/environment';
-import { Email } from '../email/email.model';
-import { Categorie, Client } from './client.model';
+import { Client } from './client.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,20 +33,6 @@ export class ClientService {
 
   getClient(id: string): Observable<Client> {
     return this.http.get<Client>(`${this.baseUrl}/${id}`).pipe(
-      map(obj => obj),
-      catchError(e => this.errorHandler(e))
-    )
-  }
-
-  getEmails(): Observable<Email[]> {
-    return this.http.get<Email[]>(`${environment.url}/emails`).pipe(
-      map(obj => obj),
-      catchError(e => this.errorHandler(e))
-    )
-  }
-
-  getCategories(): Observable<Categorie[]> {
-    return this.http.get<Categorie[]>(`${environment.url}/categories`).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
