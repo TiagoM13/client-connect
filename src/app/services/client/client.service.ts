@@ -4,13 +4,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators"
 
-import { Categorie, Client, Email } from './client.model';
+import { environment } from '@env/environment';
+import { Email } from '../email/email.model';
+import { Categorie, Client } from './client.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  private baseUrl = 'http://localhost:3001/clients'
+  private baseUrl = `${environment.url}/clients`
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -38,14 +40,14 @@ export class ClientService {
   }
 
   getEmails(): Observable<Email[]> {
-    return this.http.get<Email[]>('http://localhost:3001/emails').pipe(
+    return this.http.get<Email[]>(`${environment.url}/emails`).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
   getCategories(): Observable<Categorie[]> {
-    return this.http.get<Categorie[]>('http://localhost:3001/categories').pipe(
+    return this.http.get<Categorie[]>(`${environment.url}/categories`).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )

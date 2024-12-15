@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Categorie, Client, Email } from '@app/services/client/client.model';
+import { Email } from '@app/services/email/email.model';
+import { Categorie, Client } from '@app/services/client/client.model';
 import { ClientService } from '@app/services/client/client.service';
 
 interface Option {
