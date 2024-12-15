@@ -1,7 +1,10 @@
 .content-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 0;
 }
 
 .card {
@@ -14,10 +17,20 @@
   gap: 1.5rem;
 }
 
-.card-content-data {
+.card-content form {
+  width: 100%;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+}
+
+.card-content form mat-label {
+  font-size: 1rem
+}
+
+.card-content form input {
+  width: 100%;
 }
 
 .content-avatar {

@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Client, Status } from 'src/app/services/client.model';
-import { ClientService } from 'src/app/services/client.service';
+
+import { Client, Status } from '@app/services/client/client.model';
+import { ClientService } from '@app/services/client/client.service';
 
 @Component({
   selector: 'app-clients',
@@ -33,11 +34,11 @@ export class ClientsComponent implements OnInit {
   getStatusText(status: Status): string {
     switch (status) {
       case Status.DESATIVADO:
-        return 'DESATIVADO';
+        return 'Desativado';
       case Status.ATIVO:
-        return 'ATIVO';
+        return 'Ativo';
       case Status.SUSPENSO:
-        return 'SUSPENSO';
+        return 'Suspenso';
       default:
         return '';
     }

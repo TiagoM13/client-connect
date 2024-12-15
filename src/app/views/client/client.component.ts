@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categorie, Client, Email, Status } from 'src/app/services/client.model';
-import { ClientService } from 'src/app/services/client.service';
+
+import { Categorie, Client, Email } from '@app/services/client/client.model';
+import { ClientService } from '@app/services/client/client.service';
+
+interface Option {
+  value: number;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-client',
@@ -12,6 +18,12 @@ export class ClientComponent implements OnInit {
   client: Client;
   emails: Email[];
   categories: Categorie[];
+
+  statusOtions: Option[] = [
+    { value: 0, viewValue: 'Desativado' },
+    { value: 1, viewValue: 'Ativo' },
+    { value: 2, viewValue: 'Suspenso' },
+  ]
 
   constructor(
     private clientService: ClientService,
@@ -39,19 +51,6 @@ export class ClientComponent implements OnInit {
   getCategoryName(categoryId: number): string {
     const category = this.categories.find(cat => cat.id === categoryId);
     return category ? category.nome : 'Categoria não encontrada';
-  }
-
-  getStatusText(status: Status): string {
-    switch (status) {
-      case Status.DESATIVADO:
-        return 'DESATIVADO';
-      case Status.ATIVO:
-        return 'ATIVO';
-      case Status.SUSPENSO:
-        return 'SUSPENSO';
-      default:
-        return '';
-    }
   }
 
   deleteClient(): void {

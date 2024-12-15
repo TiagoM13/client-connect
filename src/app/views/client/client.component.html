@@ -1,35 +1,42 @@
 <mat-card class="mat-elevation-z8">
-  <mat-card-header class="content-header">
-    <mat-card-title>Atualizar informações do cliente</mat-card-title>
-
-    <button mat-raised-button (click)="onCancel()">
-      Cancelar
+  <div class="content-header">
+    <button mat-icon-button (click)="onCancel()">
+      <i class="material-icons icon">arrow_back_ios</i>
     </button>
-  </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Atualizar informações do cliente</mat-card-title>
+    </mat-card-header>
+  </div>
 
   <mat-card-content class="card">
     <div class="card-content">
       <div class="content-avatar">
         <img mat-card-image src="{{ client.avatarUrl }}" alt="Foto cliente">
       </div>
-      <div class="card-content-data">
-        <div>
-          <strong>Inscrição: </strong>
-          <span>{{ client.inscricao }}</span>
-        </div>
-        <div>
-          <strong>Apelido: </strong>
-          <span>{{ client.apelido }}</span>
-        </div>
-        <div>
-          <strong>Nome: </strong>
-          <span>{{ client.nome }}</span>
-        </div>
-        <div>
-          <strong>Status: </strong>
-          <span>{{ getStatusText(client.status) }}</span>
-        </div>
-      </div>
+
+      <form>
+        <mat-form-field>
+          <mat-label>Inscrição</mat-label>
+          <input matInput placeholder="Inscrição" [(ngModel)]="client.inscricao" name="inscricao">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apelido</mat-label>
+          <input matInput placeholder="Apelido" [(ngModel)]="client.apelido" name="apelido">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Nome" [(ngModel)]="client.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select [(ngModel)]="client.status" name="status">
+            <mat-option *ngFor="let status of statusOtions" [value]="status.value">
+              {{ status.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+
       <div>
         <strong>Emails: </strong>
         <ul>
