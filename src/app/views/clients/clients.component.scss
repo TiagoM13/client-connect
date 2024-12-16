@@ -1,0 +1,18 @@
+.mat-card {
+  padding: 1rem 0;
+}
+
+table {
+  width: 100%;
+  padding: 1rem;
+}
+
+table th {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+tr.item-row:hover {
+  background: #ebeef1;
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+<mat-card class="mat-elevation-z8">
+  <div class="content-header">
+    <div class="content-left">
+      <button mat-icon-button (click)="goback()">
+        <i class="material-icons icon">arrow_back_ios</i>
+      </button>
+      <mat-card-header>
+        <mat-card-title>Atualizar informações do cliente</mat-card-title>
+      </mat-card-header>
+    </div>
+
+    <div class="btn-settings">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons icon">settings</i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openCategoryDialog()">Gerenciar categorias</button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <mat-card-content class="card">
+    <div class="card-content">
+      <div class="content-avatar">
+        <img mat-card-image src="{{ client.avatarUrl }}" alt="Foto cliente">
+      </div>
+
+      <form>
+        <mat-form-field>
+          <mat-label>Inscrição</mat-label>
+          <input matInput placeholder="Inscrição" [(ngModel)]="client.inscricao" name="inscricao" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apelido</mat-label>
+          <input matInput placeholder="Apelido" [(ngModel)]="client.apelido" name="apelido" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Nome" [(ngModel)]="client.nome" name="nome" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select [(ngModel)]="client.status" name="status" required>
+            <mat-option *ngFor="let status of statusOtions" [value]="status.value">
+              {{ status.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+
+      <div class="email-list">
+        <span>Emails: </span>
+        <mat-list role="list" *ngIf="client.emails?.length">
+          <mat-list-item *ngFor="let email of getEmails(client)">
+            {{ getCategoryName(email.categoria) }} - {{ email.nome }} - {{ email.email }}
+
+            <button mat-icon-button color="primary" (click)="openEmailDialog('update', email)">
+              <i class="material-icons icon">edit</i>
+            </button>
+            <button mat-icon-button color="warn" (click)="openEmailDialog('delete', email)">
+              <i class="material-icons icon">delete</i>
+            </button>
+            <mat-divider [inset]="true"></mat-divider>
+          </mat-list-item>
+        </mat-list>
+        <button mat-stroked-button color="primary" class="add-email" (click)="openEmailDialog('create')">adicionar
+          email</button>
+      </div>
+    </div>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="saveClient()">Salvar</button>
+      <button mat-raised-button color="warn" (click)="deleteClient()">Excluir</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

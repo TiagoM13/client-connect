@@ -1,0 +1,59 @@
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialog-header h2 {
+  margin: 0;
+}
+
+.content-dialog {
+  padding: 1.25rem;
+}
+
+.content-dialog .list-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.content-dialog .badge {
+  background-color: #99a3a4;
+  width: fit-content;
+  border-radius: 1.25rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.875rem;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content-dialog .badge .btn-edit {
+  border: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.content-dialog .badge .btn-edit .icon {
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.form-wrapper {
+  margin-top: 1rem;
+}
+
+.form-category {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}

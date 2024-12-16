@@ -1,0 +1,409 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "inscricao": "12.345.678/0001-90",
+      "nome": "Ana da Silva Castro",
+      "apelido": "Aninha",
+      "avatarUrl": "https://static.vecteezy.com/system/resources/thumbnails/004/899/680/small/beautiful-blonde-woman-with-makeup-avatar-for-a-beauty-salon-illustration-in-the-cartoon-style-vector.jpg",
+      "status": 0,
+      "emails": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "4",
+      "inscricao": "45.678.901/0004-60",
+      "nome": "João Almeida de Alencar",
+      "apelido": "João da Julinha",
+      "avatarUrl": "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg",
+      "status": 1,
+      "emails": [
+        "1",
+        "2",
+        "5c66"
+      ]
+    },
+    {
+      "id": "3",
+      "inscricao": "45.678.901/0004-60",
+      "nome": "Arthurzin",
+      "apelido": "Arthur da Silva",
+      "avatarUrl": "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?semt=ais_hybrid",
+      "status": 2,
+      "emails": []
+    },
+    {
+      "id": "5",
+      "inscricao": "51.789.012/0005-52",
+      "nome": "Giovana miranda ",
+      "apelido": "Gi",
+      "avatarUrl": "https://www.svgrepo.com/show/382097/female-avatar-girl-face-woman-user-9.svg",
+      "status": 1,
+      "emails": [
+        "0429",
+        "2773",
+        "1860",
+        "cae7"
+      ]
+    },
+    {
+      "id": "7",
+      "inscricao": "56.789.012/0005-50",
+      "nome": "Lucia Alevedo",
+      "apelido": "Luci",
+      "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18rgini1y20z9PMsLh6TU3Gmt-fKqQm8e2A&s",
+      "status": 0,
+      "emails": [
+        "db25",
+        "da65"
+      ]
+    }
+  ],
+  "emails": [
+    {
+      "id": "1",
+      "categoria": "1",
+      "nome": "Jose de Assis",
+      "email": "jose.assis@gmail.com",
+      "clientId": "1"
+    },
+    {
+      "id": "2",
+      "categoria": "3112",
+      "nome": "Aline Santos",
+      "email": "aline.santos@gmail.com",
+      "clientId": "1"
+    },
+    {
+      "id": "3",
+      "categoria": "3",
+      "nome": "Pedro Lima",
+      "email": "pedro.lima@empresa.com",
+      "clientId": null
+    },
+    {
+      "id": "a4b7",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "09ae",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "0aaf",
+      "nome": "Teste",
+      "email": "dev.umbj@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "dc3b",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "44f9",
+      "nome": "Teste",
+      "email": "dev.umbj@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "002e",
+      "nome": "Ana da Silva Castro",
+      "email": "cristal@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "f0eb",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "1"
+    },
+    {
+      "id": "daa7",
+      "nome": "teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "b5ee",
+      "nome": "Tiago Mota Ribeiro",
+      "email": "thyagomotha2000@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "3e5b",
+      "nome": "Ana Silva da Silva",
+      "email": "admin@adgrowth.com",
+      "categoria": "3"
+    },
+    {
+      "id": "dc1b",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "e107",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "5137",
+      "nome": "João Almeida",
+      "email": "cristal@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "02ef",
+      "nome": "Ana da Silva Castro",
+      "email": "thyagomotha2000@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "fc2a",
+      "nome": "Ana da Silva Castro",
+      "email": "thyagomotha2000@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "1c17",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "49f2",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "4820",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "cc0a"
+    },
+    {
+      "id": "20c6",
+      "nome": "Tiago Mota Ribeiro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "c154",
+      "nome": "Tiago Mota Ribeiro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "87c8",
+      "nome": "Tiago Mota Ribeiro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "c810",
+      "nome": "Teste",
+      "email": "dev.umbj@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "9963",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "0429",
+      "nome": "Ana da Silva Castro",
+      "email": "thyagomotha2000@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "156c",
+      "nome": "Ana da Silva Castro",
+      "email": "tiago.dev@gmail.com",
+      "categoria": "4"
+    },
+    {
+      "id": "3493",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "2773",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.tester@gmail.com",
+      "categoria": "2"
+    },
+    {
+      "id": "6561",
+      "nome": "teste 1000",
+      "email": "teste1001@gmail.com",
+      "categoria": "1"
+    },
+    {
+      "id": "d820",
+      "nome": "",
+      "email": "",
+      "categoria": null
+    },
+    {
+      "id": "9a93",
+      "nome": "Ana Silva",
+      "email": "dev.umbj@gmail.com",
+      "categoria": "4"
+    },
+    {
+      "id": "3543",
+      "nome": "Ana da Silva Castro",
+      "email": "dev.umbj@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "25cd",
+      "nome": "Ana Clara",
+      "email": "ana.clara@gmail.com",
+      "categoria": "7c97"
+    },
+    {
+      "id": "1f27",
+      "nome": "Ana Clara",
+      "email": "ana.clara@gmail.com",
+      "categoria": "7c97"
+    },
+    {
+      "id": "33af",
+      "nome": "Dev",
+      "email": "dev.tester@gmail.com",
+      "categoria": "ec26"
+    },
+    {
+      "id": "6e2e",
+      "nome": "COD",
+      "email": "cod@gmail.com",
+      "categoria": "ec26"
+    },
+    {
+      "id": "5c66",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3"
+    },
+    {
+      "id": "db54",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "4bbf",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "cd9b",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "6b07",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3112"
+    },
+    {
+      "id": "a112",
+      "nome": "Ana Silva",
+      "email": "thyagomotha2000@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "0ddb",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "d658"
+    },
+    {
+      "id": "0419",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "3fe6",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "3112"
+    },
+    {
+      "id": "db25",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "ec26"
+    },
+    {
+      "id": "1860",
+      "nome": "CTO",
+      "email": "tiago.devtester@gmail.com",
+      "categoria": "5"
+    },
+    {
+      "id": "cae7",
+      "nome": "Ana Silva",
+      "email": "dev.tester@gmail.com",
+      "categoria": "cd73"
+    },
+    {
+      "id": "da65",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "4"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "nome": "Advogado"
+    },
+    {
+      "id": "2",
+      "nome": "CEO"
+    },
+    {
+      "id": "3",
+      "nome": "Empresário"
+    },
+    {
+      "id": "4",
+      "nome": "Contador"
+    },
+    {
+      "id": "5",
+      "nome": "Consultor de Negócios"
+    },
+    {
+      "id": "3112",
+      "nome": "CTO"
+    },
+    {
+      "id": "abc9",
+      "nome": "Procurador"
+    },
+    {
+      "id": "a2b0",
+      "nome": "Teste"
+    }
+  ]
+}
