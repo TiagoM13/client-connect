@@ -56,7 +56,8 @@
       "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18rgini1y20z9PMsLh6TU3Gmt-fKqQm8e2A&s",
       "status": 0,
       "emails": [
-        "db25"
+        "db25",
+        "da65"
       ]
     }
   ],
@@ -363,6 +364,12 @@
       "nome": "Ana Silva",
       "email": "dev.tester@gmail.com",
       "categoria": "cd73"
+    },
+    {
+      "id": "da65",
+      "nome": "Teste",
+      "email": "dev.tester@gmail.com",
+      "categoria": "4"
     }
   ],
   "categories": [
@@ -393,6 +400,10 @@
     {
       "id": "abc9",
       "nome": "Procurador"
+    },
+    {
+      "id": "a2b0",
+      "nome": "Teste"
     }
   ]
 }

@@ -123,10 +123,6 @@ export class ClientComponent implements OnInit {
       if (action === 'create') this.addEmail(data);
       if (action === 'update') this.updateEmail(data);
       if (action === 'delete') this.removeEmail(data);
-
-      this.categoryService.getAllCategories().subscribe(categories => {
-        this.categories = categories;
-      });
     });
   }
 
