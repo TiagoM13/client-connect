@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DialogEmailComponent } from '@app/components/dialog-email/dialog-email.component';
+import { DialogCategoryComponent } from '@app/components/dialog-category/dialog-category.component';
 import { ActionType } from '@app/components/dialog-email/dialog-email.model';
 import { Email } from '@app/services/email/email.model';
 import { Client } from '@app/services/client/client.model';
@@ -25,7 +26,6 @@ export class ClientComponent implements OnInit {
   client: Client;
   emails: Email[];
   categories: Category[];
-
   isDeleteEmail: boolean = false;
 
   private temporarilyRemovedEmails: string[] = [];
@@ -79,18 +79,18 @@ export class ClientComponent implements OnInit {
   }
 
   saveClient(): void {
-    this.client.emails = this.client.emails.filter(
-      id => !this.temporarilyRemovedEmails.includes(id)
-    );
+    if (this.temporarilyRemovedEmails.length > 0) {
+      this.temporarilyRemovedEmails.map(id => this.emailService.deleteEmail(id))
+    }
 
     this.clientService.updateClient(this.client).subscribe(() => {
-      this.clientService.showMessage('Cliente atualizado com sucesso!')
-      this.router.navigate(['/clients'])
+      this.clientService.showMessage('Cliente atualizado com sucesso!');
+      this.router.navigate(['/clients']);
       this.temporarilyRemovedEmails = [];
-    })
+    });
   }
 
-  openDialog(action: ActionType, email?: Email): void {
+  openEmailDialog(action: ActionType, email?: Email): void {
     this.isDeleteEmail = action === 'delete';
 
     if (action === 'update' && email) {
@@ -123,6 +123,11 @@ export class ClientComponent implements OnInit {
       if (action === 'create') this.addEmail(data);
       if (action === 'update') this.updateEmail(data);
       if (action === 'delete') this.removeEmail(data);
+
+      this.categoryService.getAllCategories().subscribe(categories => {
+        this.categories = categories;
+        console.log(this.categories)
+      });
     });
   }
 
@@ -154,7 +159,22 @@ export class ClientComponent implements OnInit {
     this.emails = this.emails.filter(email => email.id !== deleteEmail.id);
   }
 
-  onCancel(): void {
+  goback(): void {
     this.router.navigate(["/clients"])
+  }
+
+  openCategoryDialog() {
+    const dialogRef = this.dialog.open(DialogCategoryComponent, {
+      width: "600px",
+      data: {
+        categories: this.categories
+      }
+    })
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.categoryService.getAllCategories().subscribe(categories => {
+        this.categories = categories;
+      });
+    })
   }
 }

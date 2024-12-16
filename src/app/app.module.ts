@@ -17,9 +17,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { HeaderComponent } from './components/header/header.component';
 import { DialogEmailComponent } from './components/dialog-email/dialog-email.component';
+import { DialogCategoryComponent } from './components/dialog-category/dialog-category.component';
 
 import { ClientsComponent } from './views/clients/clients.component';
 import { ClientComponent } from './views/client/client.component';
@@ -33,6 +36,7 @@ import { AppComponent } from './app.component';
     HeaderComponent,
     ClientsComponent,
     ClientComponent,
+    DialogCategoryComponent,
     DialogEmailComponent,
   ],
   imports: [
@@ -53,9 +57,12 @@ import { AppComponent } from './app.component';
     MatSelectModule,
     MatDialogModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatChipsModule
   ],
   entryComponents: [
+    DialogCategoryComponent,
     DialogEmailComponent,
   ],
   providers: [],

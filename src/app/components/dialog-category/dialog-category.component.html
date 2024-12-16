@@ -1,0 +1,34 @@
+<div class="dialog-header">
+  <h2>Gerenciar Categorias</h2>
+  <button mat-icon-button mat-dialog-close (click)="closeDialog()">
+    <i class="material-icons icon">close</i>
+  </button>
+</div>
+<mat-dialog-content class="content-dialog">
+  <div class="list-category">
+    <div *ngFor="let category of categories">
+      <div class="badge">
+        {{ category.nome }}
+
+        <button mat-icon-button class="btn-edit" (click)="onEditCategory(category)">
+          <i class="material-icons icon">edit</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <button *ngIf="!isCreating && !isEditable" mat-flat-button (click)="onAddCategory()">Adicionar categoria</button>
+
+    <div *ngIf="isCreating || isEditable" class="form-category">
+      <mat-form-field>
+        <mat-label>Categoria</mat-label>
+        <input matInput placeholder="Categoria" [(ngModel)]="category.nome" name="category.nome" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="saveCategory()">Salvar</button>
+      <button *ngIf="isEditable" mat-raised-button color="warn">Excluir</button>
+      <button mat-raised-button (click)="onCancel()">Cancelar</button>
+    </div>
+  </div>
+</mat-dialog-content>

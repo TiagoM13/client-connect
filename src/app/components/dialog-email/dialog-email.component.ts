@@ -23,8 +23,8 @@ export class DialogEmailComponent {
     @Inject(MAT_DIALOG_DATA) public dialogData: DialogData
   ) {
     this.title = this.getDialogTitle(dialogData.action)
-    this.data = dialogData.data || { nome: '', email: '', categoria: null }
-    this.categories = this.dialogData.categories.map((category => ({ value: category.id, viewValue: category.nome })));
+    this.data = dialogData.data || { nome: '', email: '', categoria: null },
+      this.categories = this.dialogData.categories.map((category => ({ value: category.id, viewValue: category.nome })));
     this.isDisabled = this.dialogData.isDisabled;
   }
 

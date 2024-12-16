@@ -1,11 +1,22 @@
 <mat-card class="mat-elevation-z8">
   <div class="content-header">
-    <button mat-icon-button (click)="onCancel()">
-      <i class="material-icons icon">arrow_back_ios</i>
-    </button>
-    <mat-card-header>
-      <mat-card-title>Atualizar informações do cliente</mat-card-title>
-    </mat-card-header>
+    <div class="content-left">
+      <button mat-icon-button (click)="goback()">
+        <i class="material-icons icon">arrow_back_ios</i>
+      </button>
+      <mat-card-header>
+        <mat-card-title>Atualizar informações do cliente</mat-card-title>
+      </mat-card-header>
+    </div>
+
+    <div class="btn-settings">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons icon">settings</i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openCategoryDialog()">Gerenciar categorias</button>
+      </mat-menu>
+    </div>
   </div>
 
   <mat-card-content class="card">
@@ -39,20 +50,20 @@
 
       <div class="email-list">
         <span>Emails: </span>
-        <mat-list role="list">
+        <mat-list role="list" *ngIf="client.emails?.length">
           <mat-list-item *ngFor="let email of getEmails(client)">
             {{ getCategoryName(email.categoria) }} - {{ email.nome }} - {{ email.email }}
 
-            <button mat-icon-button color="primary" (click)="openDialog('update', email)">
+            <button mat-icon-button color="primary" (click)="openEmailDialog('update', email)">
               <i class="material-icons icon">edit</i>
             </button>
-            <button mat-icon-button color="warn" (click)="openDialog('delete', email)">
+            <button mat-icon-button color="warn" (click)="openEmailDialog('delete', email)">
               <i class="material-icons icon">delete</i>
             </button>
             <mat-divider [inset]="true"></mat-divider>
           </mat-list-item>
         </mat-list>
-        <button mat-stroked-button color="primary" class="add-email" (click)="openDialog('create')">adicionar
+        <button mat-stroked-button color="primary" class="add-email" (click)="openEmailDialog('create')">adicionar
           email</button>
       </div>
     </div>
