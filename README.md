@@ -1,27 +1,33 @@
-# ClientConnect
+# Sistema de Gerenciamento de Clientes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
+Este é um sistema de gerenciamento de clientes desenvolvido em Angular com um back-end fictício utilizando json-server e a biblioteca faker. O projeto permite gerenciar informações de clientes, e-mails e categorias de forma simples e eficiente.
 
-## Development server
+## Funcionalidades Principais
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Front-End
 
-## Code scaffolding
+- **Listagem de Clientes**: Exibição de uma tabela com informações como inscrição, apelido, nome e status dos clientes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Atualização de Clientes**: Edição de dados de clientes, incluindo gestão de e-mails e categorias.
 
-## Build
+- **Gestão de E-mails**: Modal para criar, atualizar ou excluir e-mails associados aos clientes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- **Gestão de Categorias**: Modal para gerenciar categorias disponíveis, que podem ser vinculadas aos e-mails.
 
-## Running unit tests
+### Back-End
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **API Fictícia**: Implementada com `json-server` para criar uma API REST simples e rápida, simulando um ambiente de back-end.
 
-## Running end-to-end tests
+## Tecnologias Utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Front-End
 
-## Further help
+- **Angular**: Framework principal para construção da aplicação.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular Material**: Componentes estilizados para criar uma interface responsiva e amigável.
+
+- **RxJS**: Manipulação de dados assíncronos.
+
+### Back-End
+
+- **json-server**: Gera uma API REST fake com mínimo esforço.
