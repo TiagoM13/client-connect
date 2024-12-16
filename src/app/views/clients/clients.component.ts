@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { ClientService } from '@app/services/client/client.service';
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss']
 })
-export class ClientsComponent implements OnInit {
+export class ClientsComponent implements OnInit, AfterViewInit {
   clients: Client[] = []
   @ViewChild(MatPaginator) paginator: MatPaginator
 
@@ -25,10 +25,12 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientService.getAllClients().subscribe(clients => {
-      this.clients = clients
-      this.dataClients = new MatTableDataSource<Client>(this.clients);
-      this.dataClients.paginator = this.paginator
+      this.dataClients.data = clients
     })
+  }
+
+  ngAfterViewInit(): void {
+    this.dataClients.paginator = this.paginator
   }
 
   getStatusText(status: Status): string {
