@@ -57,7 +57,11 @@ export class DialogCategoryComponent {
 
   deleteCategory(categoryId: string): void {
     this.categoryService.deleteCategory(categoryId).subscribe(() => {
-      this.dialogRef.close();
+      const index = this.categories.findIndex(cat => cat.id === categoryId);
+      if (index !== -1) {
+        this.categories.splice(index, 1);
+      }
+      this.onCancel();
     });
   }
 

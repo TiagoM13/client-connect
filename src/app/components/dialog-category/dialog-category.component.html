@@ -27,7 +27,7 @@
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="saveCategory()">Salvar</button>
-      <button *ngIf="isEditable" mat-raised-button color="warn">Excluir</button>
+      <button *ngIf="isEditable" mat-raised-button color="warn" (click)="deleteCategory(category.id)">Excluir</button>
       <button mat-raised-button (click)="onCancel()">Cancelar</button>
     </div>
   </div>
