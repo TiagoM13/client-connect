@@ -126,7 +126,6 @@ export class ClientComponent implements OnInit {
 
       this.categoryService.getAllCategories().subscribe(categories => {
         this.categories = categories;
-        console.log(this.categories)
       });
     });
   }
